@@ -1,0 +1,31 @@
+### Get All Articles
+
+GET http://localhost:8080/api/v1/articles
+
+### Get One Article
+
+GET http://localhost:8080/api/v1/articles/52
+
+### Create New Article
+
+POST http://localhost:8080/api/v1/articles
+Content-Type: application/json
+
+{
+  "title": "My New Request",
+  "headline": "This is great!",
+  "content": "The first article's awesome text!",
+  "author": "Marco",
+  "addedAt": "2023-02-24T14:20:10"
+}
+
+### Update Article
+
+PUT http://localhost:8080/api/v1/articles/52
+Content-Type: application/json
+
+{
+  "title": "A new title",
+  "headline": "Tis is great",
+  "content": "The first article now is even better"
+}
