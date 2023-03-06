@@ -22,7 +22,7 @@ class ArticleController(private val repository: ArticleRepository) {
     fun newArticle(@RequestBody article: Article) = repository.save(article)
 
     @PutMapping("/{id}")
-    fun updateArticle(@RequestBody article: Article, @PathVariable id: Long) =
+    fun updateArticle(@RequestBody article: Article, @PathVariable id: Long)=
         repository.findById(id).map {
             it.content = article.content
             it.headline = article.headline
