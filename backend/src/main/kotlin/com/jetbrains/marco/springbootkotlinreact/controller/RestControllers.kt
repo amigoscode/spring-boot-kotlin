@@ -15,7 +15,8 @@ class ArticleController(private val repository: ArticleRepository) {
     fun articles() = repository.findAllByOrderByAddedAtDesc()
 
     @GetMapping("/{id}")
-    fun articles(@PathVariable id: Long) = repository.findById(id).orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND) };
+    fun article(@PathVariable id: Long) =
+        repository.findById(id).orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND) };
 
     @PostMapping
     fun newArticle(@RequestBody article: Article) = repository.save(article)
